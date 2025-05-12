@@ -1,5 +1,5 @@
 Doc của PaddleOCR
-![[Pasted image 20250512112527.png]]
+![Screenshot from 2025-05-12 11-25-25](https://github.com/user-attachments/assets/cf0483f4-f83e-4d02-8bf2-d38c785e8777)
 Không được cập nhật từ 2022 và chỉ dừng ở PP-OCRv3
 Check doc bằng tiếng Trung (tiếng Anh không được cập nhật và dừng ở v3) trong src sẽ có PP-OCRv4
 
@@ -10,8 +10,8 @@ Check doc bằng tiếng Trung (tiếng Anh không được cập nhật và d�
 
 **2. Check lúc export từ .pdparams sang pdiparams gặp 
 *WARNING: The pretrained params not in model***
-![[Screenshot from 2025-05-06 16-04-50.png]]
-![[Screenshot from 2025-05-06 10-07-53.png]]
+![Screenshot from 2025-05-06 16-04-50](https://github.com/user-attachments/assets/6043b634-2f3b-47f6-a1cf-659766fedee3)
+![Screenshot from 2025-05-06 10-07-53](https://github.com/user-attachments/assets/62c799d2-831c-45ec-8794-b66edda0edac)
 + Check xem đã tải cùng version file .yml và file Training_model 
 
 **3.Khi infer bằng .pdparams thì model hoạt động tốt, những khi export sang .pdiparams hoặc .onnx rồi infer thì model lại không trả về kết quả như lúc infer bằng .pdparams**  
