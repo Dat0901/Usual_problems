@@ -17,7 +17,7 @@ Check doc bằng tiếng Trung (tiếng Anh không được cập nhật và d�
 **3.Khi infer bằng .pdparams thì model hoạt động tốt, những khi export sang .pdiparams hoặc .onnx rồi infer thì model lại không trả về kết quả như lúc infer bằng .pdparams**  
 + Check xem đã tải cùng version file .yml và file Training_model 
 + Lúc export có thể lúc truyền model của mình vào thì có thể không nhận. Chuyển trực tiếp pretrain_model trong .yml từ default thành cái pdparams của mình.
-![[Pasted image 20250512113629.png]]
+![Screenshot from 2025-05-12 11-36-13](https://github.com/user-attachments/assets/31c35c22-5a6f-4be2-a963-9d7c19a2e17c)
 
 + Khi test bằng .pdiparams hoặc .onnx ví dụ det bằng: 
 ```
@@ -26,24 +26,28 @@ python3 tools/infer/predict_det.py \
 --image_dir="/home/datdq/1WorkSpace/lp_dataset/data_test_lp/test_img" \
 ```
 Thì model không trả về kết quả được như lúc test .pdparams do thiếu các bước preprocess, truyền thêm vào thì kết quả bằng lúc test .pdparams.
+![Screenshot from 2025-05-12 11-04-55](https://github.com/user-attachments/assets/d720c9e8-a1de-483f-a351-dfd4a08b5ad2)
 
-![[Pasted image 20250512110456.png]]
 Tương tự như model rec cũng cần truyền thêm preprocess step vào
-![[Pasted image 20250512111333.png]]
+![Screenshot from 2025-05-12 11-13-30](https://github.com/user-attachments/assets/f60202ab-7af2-4423-a2e5-21541c507611)
+
 Det + Rec:
+![Screenshot from 2025-05-12 11-20-25](https://github.com/user-attachments/assets/c1b209ef-2cde-4be8-8971-43ae4d13e4d4)
 
 **Chú ý** khi truyền 
 **det_limit_type=min** (do LP bé nên cần scale up, *check operators.py*) 
 thì cần truyền thêm 
-**det_limit_side_len={tùy model input check d2s_train_image_shape trong file .yml để đặt**}, không sẽ mặc định là 736, khiến lệch với model input size -> kết quả det kém
+**det_limit_side_len={tùy model input check d2s_train_image_shape trong file .yml để đặt**}, 
+không sẽ mặc định là 736, khiến lệch với model input size -> kết quả det kém
 
 **4. Với những ảnh lp dài, có độ cao < 25 pixels detection bị loạn hoặc không bắt được, trả về box linh tinh hoặc không trả về box.**
-![[camera2_9bc9cd90-b161-4aee-abde-359099a6feb7.jpg]]
+![camera2_9bc9cd90-b161-4aee-abde-359099a6feb7](https://github.com/user-attachments/assets/8b7aafea-9b7d-4b59-af29-90a6725b2970)
+
 Những ảnh này thì thay vì cho vào det -> rec, thì cho thẳng vào rec luôn.
 Các ảnh height >25 det bình thường
 
 **5. Chạy recognition của pdiparams hoặc onnx gặp 
  *InvalidArgumentError: Broadcast dimension mismatch. Operands could not be broadcast together with the shape of X and the shape of Y* **
+![Screenshot from 2025-05-12 11-42-43](https://github.com/user-attachments/assets/cc45774b-8656-4d1f-ae00-7657d4386d8c)
 
-![[Pasted image 20250512114245.png]]
 Truyền thêm các preprocess vào như lỗi ở 3.
