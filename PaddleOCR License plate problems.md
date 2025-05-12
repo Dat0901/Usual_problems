@@ -25,7 +25,8 @@ python3 tools/infer/predict_det.py \
 --det_model_dir="/home/datdq/1WorkSpace/PaddleOCR/output/205_final_output_best_acc_infer" \
 --image_dir="/home/datdq/1WorkSpace/lp_dataset/data_test_lp/test_img" \
 ```
-Thì model không trả về kết quả được như lúc test .pdparams do thiếu các bước preprocess, truyền thêm vào thì kết quả bằng lúc test.pdparams.
+Thì model không trả về kết quả được như lúc test .pdparams do thiếu các bước preprocess, truyền thêm vào thì kết quả bằng lúc test .pdparams.
+
 ![Screenshot from 2025-05-12 11-04-55](https://github.com/user-attachments/assets/d720c9e8-a1de-483f-a351-dfd4a08b5ad2)
 
 Tương tự như model rec cũng cần truyền thêm preprocess step vào
