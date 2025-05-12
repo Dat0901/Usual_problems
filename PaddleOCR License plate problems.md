@@ -35,10 +35,10 @@ Tương tự như model rec cũng cần truyền thêm preprocess step vào
 Det + Rec:
 ![Screenshot from 2025-05-12 11-20-25](https://github.com/user-attachments/assets/c1b209ef-2cde-4be8-8971-43ae4d13e4d4)
 
-**Chú ý** khi truyền 
-**det_limit_type=min** (do LP bé nên cần scale up, *check operators.py*) 
-thì cần truyền thêm 
-**det_limit_side_len={tùy model input check d2s_train_image_shape trong file .yml để đặt**}, 
+**Chú ý** khi truyền \
+**det_limit_type=min** (do LP bé nên cần scale up, *check operators.py*) \
+thì cần truyền thêm \
+**det_limit_side_len={tùy model input check d2s_train_image_shape trong file .yml để đặt**}, \
 không sẽ mặc định là 736, khiến lệch với model input size -> kết quả det kém
 
 **4. Với những ảnh lp dài, có độ cao < 25 pixels detection bị loạn hoặc không bắt được, trả về box linh tinh hoặc không trả về box.**
