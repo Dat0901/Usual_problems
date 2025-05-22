@@ -1,7 +1,13 @@
-Doc của PaddleOCR
-![Screenshot from 2025-05-12 11-25-25](https://github.com/user-attachments/assets/cf0483f4-f83e-4d02-8bf2-d38c785e8777)
-Không được cập nhật từ 2022 và chỉ dừng ở PP-OCRv3
-Check doc bằng tiếng Trung (tiếng Anh không được cập nhật và dừng ở v3) trong src sẽ có PP-OCRv4
+22/5/2025 \
+Doc của paddleocr đã được cập nhật, giờ có cả PP-OCRv5 và PaddleOCR v3.x, lên repo gốc để đọc, có cả tiếng Anh và tiếng Trung, không nên tra gg paddleocr doc tại khả năng cao sẽ dẫn đến doc cũ.
+
+
+
+12/5/2025 \
+Doc của PaddleOCR \
+![Screenshot from 2025-05-12 11-25-25](https://github.com/user-attachments/assets/cf0483f4-f83e-4d02-8bf2-d38c785e8777) \
+Không được cập nhật từ 2022 và chỉ dừng ở PP-OCRv3 \
+Nên check doc bằng tiếng Trung (tiếng Anh không được cập nhật và dừng ở v3) trong src sẽ có PP-OCRv4
 
 **1. Check lúc export từ .pdparams sang pdiparams của Recognition gặp   
 *WARNING: The shape of model params not matched with loaded params***
