@@ -97,3 +97,11 @@ Các ảnh height >25 det bình thường
 ![Screenshot from 2025-05-12 11-42-43](https://github.com/user-attachments/assets/cc45774b-8656-4d1f-ae00-7657d4386d8c)
 
 Truyền thêm các preprocess vào như lỗi ở 3.
+
+**6. Chạy recognition gặp lỗi \
+*IndexError: list index out of range***
+![image](https://github.com/user-attachments/assets/84ffaebf-b36e-4316-ab4a-7017023cf007) \
+Từ v5 trờ đi nếu không truyền dict vào thì sẽ tự động dùng dict ở dòng 33 của file *rec_postprocess.py* nên nếu dùng bản tiếng trung của rec như v5 thì phải truyền dict vào tìm `ppocrv5_dict.txt`
+```
+--rec_char_dict_path="/home/datdq/1WorkSpace/PaddleOCR/ppocr/utils/dict/ppocrv5_dict.txt"
+```
