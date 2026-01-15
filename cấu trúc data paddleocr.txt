@@ -1,0 +1,17 @@
+Cấu trúc data det
+VD 
+data_lp/test_img/camera1_13d25c06-f0e1-4349-bb8d-177160c43ff8.jpg	[{"transcription": "98-B2", "points": [[12.0, 12.0], [35.0, 12.0], [35.0, 23.0], [12.0, 23.0]]}, {"transcription": "538144", "points": [[10.0, 23.0], [36.0, 22.0], [36.0, 30.0], [11.0, 31.0]]}]
+
+--> đường dẫn tới ảnh \t [{"transcription": "gt text1", "points": box1]}, {"transcription": "gt text2", "points": box2}]
+
+Cấu trúc data rec
+VD
+data_rec_lp/cropped_output_test/camera1_13d25c06-f0e1-4349-bb8d-177160c43ff8_001.jpg	98-B2
+
+--> đường dẫn tới ảnh \t gt text
+
+Với:
+\t là seperator giữa đường dẫn và annotation
+ảnh của det là ảnh full
+ảnh của rec là ảnh được crop theo box của det
+
