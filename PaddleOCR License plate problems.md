@@ -161,3 +161,9 @@ Check trong file .yml, khả năng cao cái này là do thay đổi về `batch_
 profiler_options: null
 ```
 chỉnh về default là `batch_size_per_card: 1` thì chạy ok
+
+## 9. Training rec, nhưng mà CTCLoss ở 0, và acc cũng ở 0
+<img width="933" height="90" alt="image" src="https://github.com/user-attachments/assets/49ffc402-5434-484e-b556-fc14321d6bc0" />
+
+Trường hợp này xảy ra khi mà độ dài của chữ cần train (vd: dòng mrz, hoặc địa chỉ dài) và cái `max_text_length` bé hơn thế (`max_text_length` max value là 40). Bình thường `max_text_length` cần phải >= cái chữ cần đoán. Tăng cái này lên.\
+Cùng với đó nếu ảnh mà dài kiểu 900px+ thì nên chỉnh cái `d2s_train_image_shape` value thành `[3, 48, 320]` -> `[3, 48, X]` với X là tùy độ lớn (vd 640, 960, ...), chỉnh các số khác lenght cũng cần phải như thế.
